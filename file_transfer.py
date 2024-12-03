@@ -69,16 +69,16 @@ def set_placeholder(entry, placeholder_text):
 def send():
     global file_path
     try:
-        print(file_path)  # проверка, что file_path определён
+        print(file_path)  # Проверка, что file_path определён
     except NameError:
         messagebox.showerror("Maya4ok's File Transfer", "Сначала нужно открыть файл (просто нажать по кнопке)")
         return
 
     host = ip_entry.get()
 
-    # сохранение IP-адреса в файл
+    # Сохранение IP-адреса в файл
     try:
-        with open(path.expanduser("~/appdata/roaming/file_transfer.dat"), "wb") as file:
+        with open(path.expanduser("~\\appdata\\roaming\\file_transfer.dat"), "wb") as file:
             pickle.dump(host, file)
     except Exception as e:
         messagebox.showerror("Maya4ok's File Transfer", f"Ошибка сохранения IP: {e}")
@@ -89,16 +89,16 @@ def send():
             with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as client_socket:
                 client_socket.connect((host, 9999))
                 root.after(0, lambda: current_task1.configure(text=f"Подключено к {host}"))
-                # отправка имени файла
+                # Отправка имени файла
                 file_name = path.basename(file_path)
                 file_name = file_name.encode().ljust(256)
                 client_socket.sendall(file_name)
                 root.after(0, lambda: current_task1.configure(text="Отправлено название файла"))
-                # отправка размера файла
+                # Отправка размера файла
                 file_size = path.getsize(file_path)
                 client_socket.sendall(file_size.to_bytes(8, 'big'))
                 root.after(0, lambda: current_task1.configure(text="Отправлен размер файла, отправление файла"))
-                # отправка содержимого файла
+                # Отправка содержимого файла
                 sent_size = 0
                 progress_send["value"] = 0  # Сбросить прогресс
                 with open(file_path, 'rb') as f:
@@ -185,7 +185,7 @@ progress.pack(padx=10, pady=10, fill="x", side="bottom")
 send_frame = tk.Frame(root)
 ip_entry = tk.Entry(send_frame, font=("Roboto Medium", 18))
 ip_entry.pack(padx=10, pady=5, fill="x")
-with open(path.expanduser("~/appdata/roaming/file_transfer.dat"), "rb") as file:
+with open(path.expanduser("~\\appdata\\roaming\\file_transfer.dat"), "rb") as file:
     try:
         ip_text = pickle.load(file)
         ip_entry.insert(0, ip_text)
