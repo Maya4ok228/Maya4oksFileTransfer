@@ -1,22 +1,22 @@
-# Maya4ok's File Transfer
+# Maya4ok's File Transfer v1.1.0
 
-Простое приложение для передачи файлов через сеть с использованием **Tkinter** для интерфейса и **Socket** для сетевой передачи. Программа позволяет отправлять и принимать файлы между двумя устройствами в локальной сети или через открытые порты.
+A simple application for transferring files over a network using **Tkinter** for interface and **Socket** for network transfer. The program allows you to send and receive files between two devices on a local network or through open ports.
 
-## Как использовать
+## How to use
 
-1. **Запуск сервера**: На первом устройстве, с которого будет скачиваться файл, необходимо запустить сервер.
-2. **Передача файла**: На втором устройстве откройте программу и получите файл.
+1. **Starting the server**: On the first device from which the file will be downloaded, you need to start the server.
+2. **File Transfer**: On the second device, open the program and receive the file.
 
-**Важно**: Для корректной работы программы на одном из устройств должны быть открыты порты, либо необходимо использовать локальную сеть.
+**Important**: For the program to work correctly, ports must be open on one of the devices, or you must use a local network.
 
-## Особенности
+## Features
 
-- **Многопоточность**: Файлы передаются в отдельном потоке, что позволяет не блокировать интерфейс.
-- **Прогресс передачи**: Вы можете следить за процессом передачи файлов с помощью индикаторов прогресса.
-- **Сохранение IP-адреса**: IP-адрес получателя сохраняется для повторного использования.
-- **Обработка ошибок**: Программа аккуратно обрабатывает возможные ошибки, например, если файл не выбран или произошла ошибка подключения.
-- **Интерфейс**: Обновлён стиль интерфейса, теперь он выглядит ещё удобнее.
+- **Multithreading**: Files are transferred in a separate thread, which allows you not to block the interface.
+- **Transmission progress**: You can monitor the file transfer process using progress indicators.
+- **Saving the IP address**: The recipient's IP address is saved for reuse.
+- **Error handling**: The program carefully handles possible errors, for example, if a file is not selected or a connection error occurred.
+- **Interface**: The interface style has been updated, now it looks even more convenient.
 
-## Контрибуции
+## Contributions
 
-Если вы хотите внести изменения или улучшения, сделайте форк проекта и отправьте пулл-реквест.
+If you want to make changes or improvements, make a fork of the project and send a pull request.
